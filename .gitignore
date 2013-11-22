@@ -19,6 +19,8 @@ lib
 lib64
 __pycache__
 
+bower_components
+
 # Installer logs
 pip-log.txt
 

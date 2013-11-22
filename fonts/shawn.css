@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'shawnRegular';
+    src: url('shawn.eot');
+    src: url('shawn.eot') format('embedded-opentype'),
+         url('shawn.woff') format('woff'),
+         url('shawn.ttf') format('truetype'),
+         url('shawn.svg#shawnRegular') format('svg');
+}
