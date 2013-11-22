@@ -35,7 +35,6 @@ h1, h2, h3, h4, h5, h6 {
 
     .well {
         color: @gray-lighter;
-        width: 600px;
         background-color: rgba(0, 0, 0, 0.7);
         background-image: none;
         border-color: @gray-darker;
@@ -154,11 +153,14 @@ h1, h2, h3, h4, h5, h6 {
             color: @brand-primary;
         }
     }
-    .social-icon {
-        font-size: 72px;
-        vertical-align: middle;
-        text-shadow: 0 1px 0 rgba(0,0,0,.4);
-        text-shadow: 0 -1px 0 rgba(255,255,255,.4);
+    .icon-row {
+        line-height: 1;
+        .social-icon {
+            font-size: 72px;
+            vertical-align: middle;
+            text-shadow: 0 1px 0 rgba(0,0,0,.4);
+            text-shadow: 0 -1px 0 rgba(255,255,255,.4);
+        }
     }
     .network-info {
         min-height: 400px;
