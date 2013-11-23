@@ -478,7 +478,7 @@ h6 small {
   background: url(img/txtr/tweed.png) repeat center center scroll;
   color: #eeeeee;
 }
-#web a {
+#web p.lead a {
   color: #ffcc00;
 }
 #web h2 {
