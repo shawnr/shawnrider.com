@@ -1,0 +1,48 @@
+{{ $music := .Site.GetPage "/music" -}}
+{{ $craft := .Site.GetPage "/craft" -}}
+{{ $elsewhere := .Site.GetPage "/elsewhere" -}}
+{
+  "music": {
+    "band": {{ $music.Params.band | jsonify }},
+    "tagline": {{ $music.Params.tagline | jsonify }},
+    "authorial": {{ $music.Params.authorial_line | jsonify }},
+    "bandcamp": {{ .Site.Params.bandcamp | jsonify }},
+    "harderwins": {{ .Site.Params.harderwins | jsonify }},
+    "albums": [
+      {{ range $i, $a := $music.Params.albums -}}
+      {{ if $i }},{{ end }}{
+        "title": {{ $a.title | jsonify }},
+        "year": {{ $a.year | jsonify }},
+        "url": {{ $a.url | jsonify }},
+        "cover": {{ $a.cover | default "" | jsonify }},
+        "description": {{ $a.description | jsonify }}
+      }
+      {{- end }}
+    ]
+  },
+  "craft": {
+    "subtitle": {{ $craft.Params.subtitle | jsonify }},
+    "authorial": {{ $craft.Params.authorial_line | jsonify }},
+    "instagram": {{ .Site.Params.instagram | jsonify }}
+  },
+  "archive": [
+    {{ range $i, $p := sort (where .Site.RegularPages "Section" "archive") "Params.weight" -}}
+    {{ if $i }},{{ end }}{
+      "title": {{ $p.Title | jsonify }},
+      "label": {{ $p.Params.label | jsonify }},
+      "hook": {{ $p.Params.hook | jsonify }},
+      "year": {{ $p.Params.year | jsonify }},
+      "url": {{ $p.Params.url_link | jsonify }},
+      "screenshot": {{ $p.Params.screenshot | default "" | jsonify }}
+    }
+    {{- end }}
+  ],
+  "elsewhere": {
+    "bandcamp": {{ .Site.Params.bandcamp | jsonify }},
+    "github": {{ .Site.Params.github | jsonify }},
+    "instagram": {{ .Site.Params.instagram | jsonify }},
+    "bluesky": {{ .Site.Params.bluesky | jsonify }},
+    "closing": {{ $elsewhere.Params.closing_line | jsonify }}
+  },
+  "description": {{ .Site.Params.description | jsonify }}
+}

@@ -1,38 +1,15 @@
-*.py[cod]
+# Hugo
+public/
+resources/_gen/
+.hugo_build.lock
 
-# C extensions
-*.so
+# OS
+.DS_Store
+Thumbs.db
 
-# Packages
-*.egg
-*.egg-info
-dist
-build
-eggs
-parts
-bin
-var
-sdist
-develop-eggs
-.installed.cfg
-lib
-lib64
-__pycache__
-
-bower_components
-
-# Installer logs
-pip-log.txt
-
-# Unit test / coverage reports
-.coverage
-.tox
-nosetests.xml
-
-# Translations
-*.mo
-
-# Mr Developer
-.mr.developer.cfg
-.project
-.pydevproject
+# Editor
+*.swp
+*.swo
+*~
+.idea/
+.vscode/

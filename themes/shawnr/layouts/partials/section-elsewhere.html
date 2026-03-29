@@ -1,0 +1,28 @@
+{{ with .Site.GetPage "/elsewhere" }}
+<section id="elsewhere" class="elsewhere-section section-bg">
+  <div class="section-inner">
+  <h2>{{ .Title }}</h2>
+
+  <ul class="link-list">
+    <li>
+      <span class="link-label">Bandcamp</span>
+      <a href="{{ $.Site.Params.bandcamp }}">harderwins.bandcamp.com</a>
+    </li>
+    <li>
+      <span class="link-label">GitHub</span>
+      <a href="{{ $.Site.Params.github }}">github.com/shawnr</a>
+    </li>
+    <li>
+      <span class="link-label">Instagram</span>
+      <a href="{{ $.Site.Params.instagram }}">instagram.com/shawnr</a>
+    </li>
+    <li>
+      <span class="link-label">Bluesky</span>
+      <a href="{{ $.Site.Params.bluesky }}">bsky.app/profile/shawnr.bsky.social</a>
+    </li>
+  </ul>
+
+  <p class="closing-line">{{ .Params.closing_line }}</p>
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,32 @@
+{{ with .Site.GetPage "/music" }}
+<section id="music" class="music-section section-bg">
+  <div class="section-inner">
+  <h2>{{ .Title }}</h2>
+  <p class="band-name mono">{{ .Params.band }}</p>
+  <p class="tagline">{{ .Params.tagline }}</p>
+
+  <div class="album-feature">
+    <div class="album-art">
+      <!-- TODO: replace with actual album art image -->
+    </div>
+    <div class="album-info">
+      <p class="album-title">{{ .Params.latest_album }}</p>
+      <p class="album-year">({{ .Params.latest_album_year }})</p>
+    </div>
+  </div>
+
+  <div class="link-grid">
+    <a href="{{ $.Site.Params.bandcamp }}">Bandcamp</a>
+    <a href="https://open.spotify.com/artist/harderwins">Spotify</a>
+    <a href="https://music.apple.com/artist/harder-wins">Apple Music</a>
+    <a href="https://youtube.com/@harderwins">YouTube</a>
+    <a href="https://soundcloud.com/harderwins">SoundCloud</a>
+    <a href="https://instagram.com/harderwins">Instagram</a>
+  </div>
+
+  <p class="authorial">{{ .Params.authorial_line }}</p>
+
+  <p><a href="{{ $.Site.Params.harderwins }}">harderwins.com &rarr;</a></p>
+  </div>
+</section>
+{{ end }}

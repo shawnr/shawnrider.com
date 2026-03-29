@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /system/
+Disallow: /admin/
+Disallow: /private/
+
+# if you're reading this manually, hello
+# there are other things here
+# /system/ doesn't exist but you should try the terminal anyway
+# the terminal is real

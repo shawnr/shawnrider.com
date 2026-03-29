@@ -1,0 +1,17 @@
+/* TEAM */
+Creator: Shawn Rider
+Site: shawnrider.com
+From: Seattle, WA
+
+/* THANKS */
+Conway, John Horton — for the garden
+
+/* TECHNOLOGY COLOPHON */
+Hugo — static site generator
+Vanilla JS — no frameworks were harmed
+Conway's Game of Life — running right now, behind everything
+The web — circa 1996, still good
+
+/* THINGS NOT IN THE NAV */
+Some jokes live here. They are not ready yet.
+Check back. Or don't. They'll be here either way.

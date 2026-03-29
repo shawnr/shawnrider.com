@@ -1,0 +1,26 @@
+{{ define "main" }}
+
+<div class="terminal-shell" id="terminal-shell">
+  <div class="term-titlebar">
+    <div class="term-dots"><span></span><span></span><span></span></div>
+    <span class="title">shawnrider.com</span>
+  </div>
+  <div class="term-output" id="term-output"></div>
+  <div class="term-input-row">
+    <span class="prompt">~$</span>
+    <input type="text" class="term-input" id="term-input" autocomplete="off" autocapitalize="off" spellcheck="false" autofocus>
+    <span class="term-cursor"></span>
+  </div>
+  <div class="term-hints" id="term-hints">
+    <span><kbd>Enter</kbd> run command</span>
+    <span><kbd>&uarr;</kbd><kbd>&darr;</kbd> history</span>
+    <span><kbd>Ctrl+L</kbd> clear</span>
+    <span><kbd>Tab</kbd> autocomplete</span>
+  </div>
+</div>
+
+<div id="site-data" style="display:none">
+{{ partial "site-data.html" . | safeHTML }}
+</div>
+
+{{ end }}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  {{- partial "head.html" . -}}
+</head>
+<body>
+<!--
+  ___  _
+ / __|| |_   __ _  __ __ ___ _  _ _ _
+ \__ \| ' \ / _` | \ V  V / ' \| '_| '_|
+ |___/|_||_|\__,_|  \_/\_/|_||_|_| |_|
+
+  shawnrider.com
+  built with hugo + vanilla js
+  conway's game of life is running behind this page
+  there are things here that are not in the nav
+  type 'help' in the terminal
+  or: look at /humans.txt
+-->
+  <canvas id="gol-canvas"></canvas>
+  {{- block "main" . }}{{- end }}
+  <script src="/js/gol.js"></script>
+  <script src="/js/wumpus.js"></script>
+  <script src="/js/terminal.js"></script>
+</body>
+</html>

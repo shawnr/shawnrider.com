@@ -1,0 +1,16 @@
+baseURL = "https://shawnrider.com/"
+languageCode = "en-us"
+title = "Shawn Rider"
+theme = "shawnr"
+
+[params]
+  description = "Artful engineering since 1975."
+  author = "Shawn Rider"
+  github = "https://github.com/shawnr"
+  instagram = "https://instagram.com/shawnr"
+  bluesky = "https://bsky.app/profile/shawnr.bsky.social"
+  bandcamp = "https://harderwins.bandcamp.com"
+  harderwins = "https://harderwins.com"
+
+[markup.goldmark.renderer]
+  unsafe = true

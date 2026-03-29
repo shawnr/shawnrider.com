@@ -1,0 +1,17 @@
+<section id="archive" class="archive-section section-bg">
+  <div class="section-inner">
+  <h2>Archive</h2>
+
+  <div class="card-grid">
+    {{ range sort (where .Site.RegularPages "Section" "archive") "Params.weight" }}
+    <div class="terminal-card">
+      <div class="card-label">[{{ .Params.label }}]</div>
+      <div class="card-title">{{ .Title }}</div>
+      <p class="card-hook">{{ .Params.hook }}</p>
+      <div class="card-year">{{ .Params.year }}</div>
+      <a href="{{ .Params.url_link }}" class="card-link">&rarr; visit archive</a>
+    </div>
+    {{ end }}
+  </div>
+  </div>
+</section>

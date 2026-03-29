@@ -1,0 +1,20 @@
+{{ with .Site.GetPage "/craft" }}
+<section id="craft" class="craft-section section-bg">
+  <div class="section-inner">
+  <h2>{{ .Title }}</h2>
+  <p class="mono" style="color: var(--muted); margin-bottom: 2rem;">{{ .Params.subtitle }}</p>
+
+  <div class="photo-grid">
+    <!-- TODO: replace with self-hosted when shawnr.design is ready -->
+    <!-- For now: placeholder boxes or Instagram oEmbed -->
+    <div style="background: var(--bg-surface); aspect-ratio: 1; border: 1px solid var(--muted);"></div>
+    <div style="background: var(--bg-surface); aspect-ratio: 1; border: 1px solid var(--muted);"></div>
+    <div style="background: var(--bg-surface); aspect-ratio: 1; border: 1px solid var(--muted);"></div>
+  </div>
+
+  <p class="authorial">{{ .Params.authorial_line }}</p>
+
+  <p><a href="{{ $.Site.Params.instagram }}">@shawnr on Instagram &rarr;</a></p>
+  </div>
+</section>
+{{ end }}

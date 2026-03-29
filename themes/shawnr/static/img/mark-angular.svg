@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- SR Angular Mark — placeholder, replace with final SVG export -->
+  <g fill="currentColor">
+    <!-- Geometric S -->
+    <polygon points="40,40 80,40 80,55 55,55 55,70 80,70 80,115 40,115 40,100 65,100 65,85 40,85" />
+    <!-- Geometric R -->
+    <polygon points="95,40 145,40 145,75 130,85 150,115 130,115 112,87 110,87 110,115 95,115" />
+    <rect x="110" y="55" width="20" height="20" />
+  </g>
+</svg>
