@@ -17,8 +17,11 @@
   type 'help' in the terminal
   or: look at /humans.txt
 -->
-  <canvas id="gol-canvas"></canvas>
+  <a href="#term-input" class="sr-only">Skip to terminal input</a>
+  <canvas id="gol-canvas" aria-hidden="true"></canvas>
+  <main>
   {{- block "main" . }}{{- end }}
+  </main>
   <script src="/js/gol.js"></script>
   <script src="/js/wumpus.js"></script>
   <script src="/js/terminal.js"></script>

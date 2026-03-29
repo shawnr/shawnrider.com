@@ -1,17 +1,18 @@
 {{ define "main" }}
 
-<div class="terminal-shell" id="terminal-shell">
-  <div class="term-titlebar">
+<div class="terminal-shell" id="terminal-shell" role="application" aria-label="Interactive terminal — type help for commands">
+  <div class="term-titlebar" aria-hidden="true">
     <div class="term-dots"><span></span><span></span><span></span></div>
     <span class="title">shawnrider.com</span>
   </div>
-  <div class="term-output" id="term-output"></div>
+  <div class="term-output" id="term-output" role="log" aria-live="polite" aria-label="Terminal output"></div>
   <div class="term-input-row">
-    <span class="prompt">~$</span>
-    <input type="text" class="term-input" id="term-input" autocomplete="off" autocapitalize="off" spellcheck="false" autofocus>
-    <span class="term-cursor"></span>
+    <label for="term-input" class="sr-only">Terminal command input</label>
+    <span class="prompt" aria-hidden="true">~$</span>
+    <input type="text" class="term-input" id="term-input" autocomplete="off" autocapitalize="off" spellcheck="false" autofocus aria-label="Terminal command input">
+    <span class="term-cursor" aria-hidden="true"></span>
   </div>
-  <div class="term-hints" id="term-hints">
+  <div class="term-hints" id="term-hints" role="status" aria-label="Keyboard shortcuts">
     <span><kbd>Enter</kbd> run command</span>
     <span><kbd>&uarr;</kbd><kbd>&darr;</kbd> history</span>
     <span><kbd>Ctrl+L</kbd> clear</span>

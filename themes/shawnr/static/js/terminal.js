@@ -102,9 +102,13 @@
   }
 
   function focusCard(idx) {
-    activeCards.forEach(function (c) { c.classList.remove('focused'); });
+    activeCards.forEach(function (c) {
+      c.classList.remove('focused');
+      c.setAttribute('aria-selected', 'false');
+    });
     if (activeCards[idx]) {
       activeCards[idx].classList.add('focused');
+      activeCards[idx].setAttribute('aria-selected', 'true');
       activeCards[idx].scrollIntoView({ block: 'nearest', behavior: 'smooth' });
     }
   }
@@ -228,7 +232,7 @@
     'NVIDIA CUDA notes:\n  the GPU has more cores than I have brain cells\n  after 3am, this ratio gets worse\n  the tensors are tensing\n  the kernels are coloneling\n  ship it',
     'PBS pledge drive transcript (REDACTED):\n  "if everyone watching gave just $5..."\n  [TAPE DEGRADES]\n  "...and that\'s how we saved public media"\n  [audience applause, possibly canned]',
     'George Saunders wrote:\n  "What I regret most in my life are\n  failures of kindness."\n\nI think about this while debugging.\nI try to be kind to the code.\nThe code is not kind back.',
-    'reading list (never finished):\n  Borges - Labyrinths [pg 47, lost]\n  Marlon James - Black Leopard, Red Wolf [pg 200, scared]\n  Nnedi Okofor - Lagoon [finished! once.]\n  Neuromancer - every year, like scripture\n  Children of Time - the spiders are sympathetic\n  Robert E. Howard - Conan stories [comfort reading]',
+    'reading list (favorites):\n  Borges - Labyrinths [lost]\n  Marlon James - Black Leopard, Red Wolf [scared]\n  Nnedi Okofor - Lagoon [finished! once.]\n  Neuromancer - every year, like scripture\n  Children of Time - the spiders are sympathetic\n  Robert E. Howard - Conan stories [comfort reading]',
     'THEY MIGHT BE GIANTS setlist (ideal):\n  1. Birdhouse in Your Soul\n  2. Istanbul (Not Constantinople)\n  3. Particle Man\n  4. Don\'t Let\'s Start\n  5. Ana Ng\n  encore: the entire Flood album\n  encore 2: just keep playing forever',
     'the skateboard in the garage has flat spots\non every wheel. it still rolls.\nit still rolls.\nthat\'s the thing about skateboards.',
     'CYBERPUNK 2077 save file corrupted.\njust like night city intended.\nthe real bug was the friends we made\nin the process of filing JIRA tickets.',
@@ -440,6 +444,8 @@
     data.music.albums.forEach(function (album) {
       var card = document.createElement('div');
       card.className = 'term-card';
+      card.setAttribute('role', 'option');
+      card.setAttribute('tabindex', '-1');
       var inner = '';
       if (album.cover) inner += '<img class="term-img" src="' + esc(album.cover) + '" alt="' + esc(album.title) + '">';
       inner += '<div class="card-body">';
@@ -480,6 +486,8 @@
     data.archive.forEach(function (item) {
       var card = document.createElement('div');
       card.className = 'term-card';
+      card.setAttribute('role', 'option');
+      card.setAttribute('tabindex', '-1');
       var inner = '';
       if (item.screenshot) inner += '<img class="term-img" src="' + esc(item.screenshot) + '" alt="' + esc(item.title) + '">';
       inner += '<div class="card-body">';
