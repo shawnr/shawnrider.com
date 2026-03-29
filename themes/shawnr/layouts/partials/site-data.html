@@ -23,7 +23,8 @@
   "craft": {
     "subtitle": {{ $craft.Params.subtitle | jsonify }},
     "authorial": {{ $craft.Params.authorial_line | jsonify }},
-    "instagram": {{ .Site.Params.instagram | jsonify }}
+    "instagram": {{ $craft.Params.instagram | jsonify }},
+    "site_url": {{ $craft.Params.site_url | jsonify }}
   },
   "archive": [
     {{ range $i, $p := sort (where .Site.RegularPages "Section" "archive") "Params.weight" -}}

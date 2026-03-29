@@ -465,9 +465,11 @@
     blank();
     line('  ' + data.craft.authorial, 'line-purple');
     blank();
-    htm('  ' + lnk(data.craft.instagram, '@shawnr on instagram \u2192'));
+    line('  gallery + process videos coming soon at:', 'line-muted');
+    htm('  ' + lnk(data.craft.site_url, 'shawnr.design \u2192'));
     blank();
-    line('  [images pending \u2014 check instagram for now]', 'line-muted');
+    line('  in the meantime:', 'line-muted');
+    htm('  ' + lnk(data.craft.instagram, '@shawnr on instagram \u2192'));
   };
 
   commands.archive = function () {
