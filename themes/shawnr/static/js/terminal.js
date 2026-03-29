@@ -233,7 +233,7 @@
     'PBS pledge drive transcript (REDACTED):\n  "if everyone watching gave just $5..."\n  [TAPE DEGRADES]\n  "...and that\'s how we saved public media"\n  [audience applause, possibly canned]',
     'George Saunders wrote:\n  "What I regret most in my life are\n  failures of kindness."\n\nI think about this while debugging.\nI try to be kind to the code.\nThe code is not kind back.',
     'reading list (favorites):\n  Borges - Labyrinths [lost]\n  Marlon James - Black Leopard, Red Wolf [scared]\n  Nnedi Okofor - Lagoon [finished! once.]\n  Neuromancer - every year, like scripture\n  Children of Time - the spiders are sympathetic\n  Robert E. Howard - Conan stories [comfort reading]',
-    'THEY MIGHT BE GIANTS setlist (ideal):\n  1. Birdhouse in Your Soul\n  2. Istanbul (Not Constantinople)\n  3. Particle Man\n  4. Don\'t Let\'s Start\n  5. Ana Ng\n  encore: the entire Flood album\n  encore 2: just keep playing forever',
+    'THEY MIGHT BE GIANTS setlist (ideal):\n  1. Birdhouse in Your Soul\n  2. Dr. Worm\n  3. Ana Ng\n  4. Don\'t Let\'s Start\n  5. Kiss Me Son of God\n  encore: the entire Flood album\n  encore 2: just keep playing forever',
     'the skateboard in the garage has flat spots\non every wheel. it still rolls.\nit still rolls.\nthat\'s the thing about skateboards.',
     'CYBERPUNK 2077 save file corrupted.\njust like night city intended.\nthe real bug was the friends we made\nin the process of filing JIRA tickets.',
     'Godzilla is not the monster.\nGodzilla is the response to the monster.\nGodzilla is what happens when\nyou build nuclear reactors on fault lines\nand the earth has opinions about it.',
@@ -249,12 +249,52 @@
     'markdown is just HTML for people\nwho have opinions about whitespace.\n\nI am one of those people.\n\n---\n\n*this file is, of course, in markdown.*'
   ];
 
+  // ASCII art gallery
+  var asciiArt = [
+    { name: "battlemech_atlas.asc", content: "          0 _____\n           X_____\\\n   .-^-.  ||_| |_||  .-^-.\n  /_\\_/_\\_|  |_|  |_/_\\_/_\\\n  ||(_)| __\\_____/__ |(_)||\n  \\/| | |::|\\```/|::| | |\\/\n  /`---_|::|-+-+-|::|_---'\\\n / /  \\ |::|-|-|-|::| /  \\ \\\n/_/   /|`--'-+-+-`--'|\\   \\_\\\n| \\  / |===/_\\ /_\\===| \\  / |\n|  \\/  /---/-/-\\-\\  o\\  \\/  |\n| ||| | O / /   \\ \\   | ||| |\n| ||| ||-------------|o|||| |\n| ||| ||----\\ | /----|o|||| |\n| _|| ||-----|||-----|o|||_ |\n\\/|\\/  |     |||     |o|\\/|\\/\n\\_o/   |----|||||----|-' \\o_/\n       |##  |   |  ##|\n       |----|   |----|\n       ||__ |   | __||\n      [|'  `|] [|'  `|]\n      [|`--'|] [|`--'|]\n      /|__| |\\ /| |__|\\\n      ||  | || || |  ||\n      ||__|_|| ||_|__||\n      ||    || ||    ||\n      \\|----|/ \\|----|/    -- ATLAS\n      /______\\ /______\\\n      |__||__| |__||__|" },
+    { name: "battlemech_catapult.asc", content: "   _____             _____\n  |_____|___________|_____|\n  |_____| / _____ \\ |_____|\n  |_____|/ /\\___/\\ \\|_____|\n /|====|__/_/___\\_\\__|====|\\\n ||====|  _/_\\_/_\\_  |====||\n \\|====| | \\ ... / | |====|/\n       |__\\ `---' /__|\n        |==\\_____/==|\n        |===|===|===|\n        |===|+-+|===|\n        >|||<   >|||<\n        |---|   |---|\n        || ||   || ||\n        || ||   || ||\n        >= =<   >= =<\n        |===|   |===|\n        >---/   \\---<\n        ||#|     |#||\n        ||-|\\   /|-||\n        ||+||   ||+||\n        ||-|/   \\|-||\n        ||_|\\   /|_||     -- CATAPULT\n     ___|/-\\/   \\/-\\|___\n    /________\\ /________\\" },
+    { name: "battlemech_marauder.asc", content: "               ^\n             (/U\\)\n             \\___/     /\n         --  _|||_  --/\n        //\\\\/ ___ \\/,/\\\n        \\\\////_^_\\\\\\/'/\n         -///-/_\\-\\/\\-\n        |||/_______\\|||\n      ,/|||\\  |O|  /|||\\,\n     /  |_\\\\/-___-\\//_|  \\\n    / ,/.--/-------\\--.\\, \\\n   /\\/  | / ||`|'|| \\ |  \\/\\\n  / /    ||=|`---'|=||    \\ \\\n |\\/     |--|     |--|     \\/|\n/()\\     \\__/     \\__/     /()\\\n\\__/     /  \\     /  \\     \\__/\n|  |     ||||     ||||     |  |\n|==|     ||||     ||||     |==|\n         ||||     ||||\n         ||||     ||||\n         \\__/     \\__/\n         /  \\     /  \\\n         ||||     ||||\n         ||||     ||||\n         ||||     ||||\n       ,/|__|\\   /|__|\\,     -- MARAUDER\n      /--|__|-\\ /-|__|--\\\n     |___|  |_| |_|  |___|" },
+    { name: "battlemech_rifleman.asc", content: "      ______________\n     `--------------'\n  _.  .--./|  |\\.--.  ._\n //|  |--||----||--|  |\\\\\n||__\\_|  ||____||  |_/__||\n||_-- |__|||==|||__| --_||\n||_() |___||--||___| ()_||\n|| --_|   ||__||   |_-- ||\n||||  |---||__||---|  ||||\n \\|| /|___||__||___|\\_||/\n |||_| \\.||||||||./ |_|||\n \\ _ /   \\--==--/   \\ _ /\n  <_>  /----------\\  <_>\n  ||| _\\__ |  | __/_ |||\n  ||| \\  |\\|  |/|  / |||\n  ||| |  |_|__|_|  | |||\n  ||| [--+ \\  / +--] |||\n  ||| |--+-/  \\-+--| |||\n  ||| |  ||    ||  | |||\n  |=| |___|    |___| |=|\n  / \\ |---|    |---| / \\\n  |=| | | |    | | | |=|\n  \\ / |___|    |___| \\ /\n   = (| | ||  || | |) =\n      |--_||  ||_--|\n     _|_#__|  |__#_|_     -- RIFLEMAN\n    /______\\  /______\\\n   |________||________|" },
+    { name: "blades.asc", content: "      ______________________________ ______________________\n    .'                              | (_)     (_)    (_)   \\\n  .'                                |  __________________   }\n.'_.............................____|_(                  )_/\n\n      ______________________________ ______________________\n     |                              | (_)     (_)    (_)   \\\n     |                              |  __________________   }\n     |..........................____|_(                  )_/\n\n ___________________________________ ______________________\n \\                                  | (_)     (_)    (_)   \\\n  `.                                |  __________________   }\n    `-..........................____|_(                  )_/\n\n       _____________________________ ______________________\n    .-'                             | (_)     (_)    (_)   \\\n   (                                |  __________________   }\n    `-..........................____|_(                  )_/\n\n      ______________________________ ______________________\n    ,/                              | (_)     (_)    (_)   \\\n  ,/                                |  _.--._      _.--._   }\n /_.............................____|_(      `-..-'      )_/\n      ______________________________ ______________________\n    ,/                              | (_)     (_)    (_)   \\\n  ,/                                |  __              __   }\n /_.............................____|_(  `--.______.--'  )_/" },
+    { name: "books.asc", content: "       .--.                   .---.\n   .---|__|           .-.     |~~~|\n.--|===|--|_          |_|     |~~~|--.\n|  |===|  |'\\     .---!~|  .--|   |--|\n|%%|   |  |.'\\    |===| |--|%%|   |  |\n|%%|   |  |\\.'\\   |   | |__|  |   |  |\n|  |   |  | \\  \\  |===| |==|  |   |  |\n|  |   |__|  \\.'\\ |   |_|__|  |~~~|__|\n|  |===|--|   \\.'\\|===|~|--|%%|~~~|--|\n^--^---'--^    `-'`---^-^--^--^---'--' " },
+    { name: "cassette.asc", content: " ___________________________________________\n|  _______________________________________  |\n| / .-----------------------------------. \\ |\n| | | /\\ :..Shawn Loves U Mixtape 90 min| | |\n| | |/--\\:......1993............. NR [x]| | |\n| | `-----------------------------------' | |\n| |      //-\\\\   |         |   //-\\\\      | |\n| |     ||( )||  |_________|  ||( )||     | |\n| |      \\\\-//   :....:....:   \\\\-//      | |\n| |       _ _ ._  _ _ .__|_ _.._  _       | |\n| |      (_(_)| |(_(/_|  |_(_||_)(/_      | |\n| |               low noise   |           | |\n| `______ ____________________ ____ ______' |\n|        /    []             []    \\        |\n|       /  ()                   ()  \\       |\n!______/_____________________________\\______!" },
+    { name: "dj_turntables.asc", content: "                    ___                                          ___\n __________________/  /                       __________________/  /\n| _    _______    /  /                       | _    _______    /  /\n|(_) .d########b. //)| _____________________ |(_) .d########b. //)|\n|  .d############//  ||        _____        ||  .d############//  |\n| .d######\"\"####//b. ||() ||  [BASS ]  || ()|| .d######\"\"####//b. |\n| 9######(  )#_//##P ||()|__|  | = |  |__|()|| 9######(  )#_//##P |\n| 'b######++#/_/##d' ||() ||   | = |   || ()|| 'b######++#/_/##d' |\n|  \"9############P\"  ||   ||   |___|   ||   ||  \"9############P\"  |\n|  _\"9a#######aP\"    ||  _   _____..__   _  ||  _\"9a#######aP\"    |\n| |_|  `\"\"\"\"''       || (_) |_____||__| (_) || |_|  `\"\"\"\"''       |\n|  ___..___________  ||_____________________||  ___..___________  |\n| |___||___________| |                       | |___||___________| |\n|____________________| DJ Stooooooooooooopid |____________________|" },
+    { name: "dragon.asc", content: "                                        ..                                     \n                                     ,o\"\"\"\"o                                   \n                                  ,o$\"     o                                   \n                               ,o$$$                                           \n                             ,o$$$'                                            \n                           ,o$\"o$'                                             \n                         ,o$$\"$\"'                                              \n                      ,o$\"$o\"$\"'                                               \n                   ,oo$\"$\"$\"$\"$$`                      ,oooo$$$$$$$$oooooo.    \n                ,o$$$\"$\"$\"$\"$\"$\"o$`..             ,$o$\"$$\"$\"'            `oo.o \n             ,oo$$$o\"$\"$\"$\"$  $\"$$$\"$`o        ,o$$\"o$$$o$'                 `o \n          ,o$\"$\"$o$\"$\"$\"$  $\"$$o$$o $$o`o   ,$$$$$o$\"$$o'                    $ \n        ,o\"$$\"'  `$\"$o$\" o$o$o\"  $$$o$o$oo\"$$$o$\"$$\"$o\"'                     $ \n     ,o$\"'        `\"$ \"$$o$$\" $\"$o$o$$\"$o$$o$o$o\"$\"$\"`\"\"o                   '  \n   ,o$'          o$ `\"$\"$o \"$o$$o$$$\"$$$o\"$o$$o\"$$$    `$$                     \n  ,o'           (     `\" o$\"$o\"$o$$$\"$o$\"$\"$o$\"$$\"$ooo|  ``                    \n $\"$             `    (   `\"o$$\"$o$o$$ \"o$o\"   $o$o\"$\"$    )                   \n(  `                   `    `o$\"$$o$\" \"o$$     \"o /|\"$o\"                       \n `                           `$o$$$$\"\" o$      \"o$\\|\"$o'                       \n                              `$o\"$\"$ $ \"       `\"$\"$o$                        \n                               \"$$\"$$ \"oo         ,$\"\"$                        \n                               $\"$o$$\"\"o\"          ,o$\"$                       \n                               $$\"$$\"$ \"o           `,\",                       \n                     ,oo$oo$$$$$$\"$o$$$ \"\"o                                    \n                  ,o$$\"o\"o$o$$o$$$\"$o$$oo\"oo                                   \n                ,$\"oo\"$$$$o$$$$\"$$$o\"o$o\"o\"$o o                                \n               ,$$$\"\"$$o$,      `$$$$\"$$$o\"\"$o $o                              \n               $o$o$\"$,          `$o$\"$o$o\"$$o$ $$o                            \n              $$$o\"o$$           ,$$$$o$$o\"$\"$$ $o$$oo      ,                  \n              \"$o$$$ $`.        ,\"$$o$\"o$\"\"$$$$ `\"$o$$oo    `o                 \n              `$o$o$\"$o$o`.  ,.$$\"$o$$\"$$\"o$$$$   `$o$$ooo    $$ooooooo        \n                `$o$\"$o\"$\"$$\"$$\"$\"$$o$$o\"$$o\"        `\"$o$o            `\"o     \n                   `$$\"$\"$o$$o$\"$$\"$ $$$  $ \"           `$\"$o            `o    \n                      `$$\"o$o\"$o\"$o$ \"  o $$$o            `$$\"o          ,$    \n                         (\" \"\"$\"\"\"     o\"\" \"o$o             `$$ooo     ,o$$    \n                              $$\"\"\"o   (   \"$o$$$\"o            `$o$$$o$\"$'     \n                                ) ) )           )  ) )            ` \"'" },
+    { name: "gpu.asc", content: " ____________________________________                 ______________\n|------|------|     __   __   __     |     ___________     |           () |\n| 64X4 | 64X4 | || |  | |  | |  |    |    |           |    |           ___|\n|------|------| || |  | |  | |  |    |____|           |____|         || D |\n| 64X4 | 64X4 | || |__| |__| |__|                 ________________  ||| I |\n|------|------|  |  ________   ______   ______   | ADV476KN50     | ||| P |\n| 64X4 | 64X4 |    |TRIDENT | |______| |______|  | 1-54BV  8940   | ||| S |\n|------|------| || |TVGA    | |______| |______|  |________________| |||___|\n| 64X4 | 64X4 | || |8800CS  |          ________________                ___|\n|------|------| || |11380029|    LOW->|  /\\ SUPER VGA  | _________    |   |\n| 64X4 | 64X4 |     --------    BIOS  | \\/         (1) ||_________|   | 1 |\n|------|------| ||  ______  J  ______ |________________| _________    | 5 |\n| 64X4 | 64X4 | || |______| 2 |______| ________________ |_________|   |___|\n|------|------| ||  ________   ______ |  /\\ SUPER VGA  |               ___|\n| 64X4 | 64X4 |    |________| |______|| \\/         (2) |   _________  |   |\n|------|------| ()              HIGH->|________________|  |_________| | 9 |\n | 64X4 | 64X4 |     ________   _________   _____________   _________  |   |\n |______|______|__  |________| |_________| |_____________| |_________| |___|\n                 |               __    TVGA-1623D                    _ () |\n                 |LLLLLLLLLLLLLL|  |LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL| |___|\n                                                                          |\n                                                                          |" },
+    { name: "guitar.asc", content: "       ___\n     o|* *|o\n     o|* *|o\n     o|* *|o\n      \\===/\n       |||\n       |||\n       |||\n       |||\n    ___|||___\n   /   |||   \\\n  /    |||    \\\n |     |||     |\n  \\   (|||)   /\n   |   |||   |\n  /    |||    \\\n /     |||     \\\n/      |||      \\\n|     [===]     |\n \\             /\n  '.         .'\n    '-------'" },
+    { name: "homer.asc", content: "      _ _,---._\n   ,-','       `-.___\n  /-;'               `._\n /\\/          ._   _,'o \\\n( /\\       _,--'\\,','\"`. )\n |\\      ,'o     \\'    //\\\n |      \\        /   ,--'\"\"`-.\n :       \\_    _/ ,-'         `-._\n  \\        `--'  /                )\n   `.  \\`._    ,'     ________,','\n     .--`     ,'  ,--` __\\___,;'\n      \\`.,-- ,' ,`_)--'  /`.,'\n       \\( ;  | | )      (`-/\n         `--'| |)       |-/\n           | | |        | |\n           | | |,.,-.   | |_\n           | `./ /   )---`  )\n          _|  /    ,',   ,-'\n         ,'|_(    /-<._,' |--,\n         |    `--'---.     \\/ \\\n         |          / \\    /\\  \\\n       ,-^---._     |  \\  /  \\  \\\n    ,-'        \\----'   \\/    \\--`.\n   /            \\              \\   \\" },
+    { name: "light_switch.asc", content: "    .----------.\n    |   ~ON~   |\n    |   ____   |\n    |  |.--.|  |\n    |  ||  ||  |\n    |  ||__||  |\n    |  ||\\ \\|  |\n    |  |\\ \\_\\  |\n    |  |_\\[_]  |\n    |          |\n    |  ~OFF~   |\n    '----------'" },
+    { name: "occult_books.asc", content: " _________________________________________________________\n||-------------------------------------------------------||\n||.--.    .-._                        .----.             ||\n|||==|____| |M|___            .---.___|\"\"\"\"|_____.--.___ ||\n|||  |====| | |xxx|_          |+++|=-=|_  _|-=+=-|==|---|||\n|||==|    | | |   | \\         |   |   |_\\/_|Mages|  | ^ |||\n|||  |    | | |   |\\ \\   .--. |   |=-=|_/\\_|-=+=-|  | ^ |||\n|||  |    | | |   |_\\ \\_( oo )|   |   |    |Monks|  | ^ |||\n|||==|====| |W|xxx|  \\ \\ |''| |+++|=-=|\"\"\"\"|-=+=-|==|---|||\n||`--^----'-^-^---'   `-' \"\"  '---^---^----^-----^--^---^||\n||-------------------------------------------------------||\n||-------------------------------------------------------||\n||               ___                   .-.__.-----. .---.||\n||              |===| .---.   __   .---| |XX|<(*)>|_|^^^|||\n||         ,  /(|   |_|III|__|''|__|:x:|=|  |     |=| T |||\n||      _a'{ / (|===|+|   |++|  |==|   | |  |Illum| | S |||\n||      '/\\\\/ _(|===|-|   |  |''|  |:x:|=|  |inati| | T |||\n||_____  -\\{___(|   |-|   |  |  |  |   | |  |     | |   |||\n||       _(____)|===|+|[I]|DK|''|==|:x:|=|XX|<(*)>|=|^^^|||\n||              `---^-^---^--^--'--^---^-^--^-----^-^---^||\n||-------------------------------------------------------||\n||_______________________________________________________||" },
+    { name: "record_player.asc", content: "             ____           __     \n             \\===\\=========|__|=[]\n  <========^==='======>    _||_   \n _/_|_|_|_|_|_|_|_|_|_\\_^__||||_  \n|          Projekt             |  \n|                              |  \n+---/||\\----------------/||\\---+   \n   ^^^^^^              ^^^^^^" },
+    { name: "tux.asc", content: "         _nnnn_\n        dGGGGMMb\n       @p~qp~~qMb\n       M|@||@) M|\n       @,----.JM|\n      JS^\\__/  qKL\n     dZP        qKRb\n    dZP          qKKb\n   fZP            SMMb\n   HZM            MMMM\n   FqM            MMMM\n __| \".        |\\dS\"qML\n |    `.       | `' \\Zq\n_)      \\.___.,|     .'\n\\____   )MMMMMP|   .'\n     `-'       `--' " },
+    { name: "unicorn.asc", content: "\n                  <<<<>>>>>>           .----------------------------.\n               _>><<<<>>>>>>>>>       /               _____________)\n      \\|/      \\<<<<<  < >>>>>>>>>   /            _______________)\n-------*--===<=<<           <<<<<<<>/         _______________)\n      /|\\     << @    _/      <<<<</       _____________)\n             <  \\    /  \\      >>>/      ________)  ____\n                 |  |   |       </      ______)____((- \\\\\\\\\n                 o_|   /        /      ______)         \\  \\\\\\\\    \\\\\\\\\\\\\\\n                      |  ._    (      ______)           \\  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n                      | /       `----------'    /       /     \\\\\\\\\\\\\\     \\\\\n              .______/\\/     /                 /       /          \\\\\\\n             / __.____/    _/         ________(       /\\\n            / / / ________/`---------'         \\     /  \\_\n           / /  \\ \\                             \\   \\ \\_  \\\n          ( <    \\ \\                             >  /    \\ \\\n           \\/      \\\\_                          / /       > )\n                    \\_|                        / /       / /\n                                             _//       _//\n                                            /_|       /_|" },
+    { name: "vax_gremlin.asc", content: "             @      @\n     / \\     { _____}      / \\\n   /  |  \\___/*******\\___/  |  \\\n  (   I  /   ~   '   ~   \\  I   )\n   \\  |  |   0       0   |  |  /\n     \\   |       A       |   /\n       \\__    _______    __/\n          \\_____________/\n    _-------*         *-------_\n   /  /---      VAX       ---\\  \\\n /  /     (    System   )     \\  \\\n{  (     (    Gremlin!   )     )  }\n \\  \\    |               |    /  /\n   \\  \\  |               |  /  /\n    **** |               | ****\n   //|\\\\  \\_____________/  //|\\\\\n   *         '*** ***'         *\n  ***.       .*** ***.       .***\n  '*************' '*************'" },
+    { name: "y2k.asc", content: "                 /'.    /|    .'\\\n           ,._   |+i\\  /++\\  / +|    ,,\n           |*+'._/+++\\/+ ++\\/+++<_.-'+|\n      :-.  \\ ++++?++ +++++*++++++ +++ /  .-:\n      |*+\\_/++++ +++*++ ++++++ ++?++++\\_/ +|\n  ,    \\*+++++ ++++ +++*+++ ++++ +++ +++++/   ,\n  \\'-._> +__+*++__*+++_+__*++ ++__++++__*<_.-'/\n   `>*+++|  \\++/  |+*/     `\\ +|  |++/  |++++<'\n_,-'+ * +*\\  \\/  /++|__.-.  |+ |  |+/  /+ +*+'-._\n'-.*+++++++\\    /+ ++++++/  / *|  |/  /+ ++++++.-'\n    > *+++++\\  /*++++ +/` /`+++|     < *++ +++< \n_,-'* +++ ++|  |++ +*/` /` +* +|  |\\  \\+ ++++++'-._\n`-._+ +*++?+|  |+++*|  '-----.+|  |+\\  \\+* ++ +_.-'\n   _`\\++++++|__|+ *+|________|+|__|++\\__|++++/`_\n  /*++_+* + +++++ ++ + ++++ +++++ ++ ++++ ++_+*+\\\n  '--' `>*+++ +++++ +++++*++++  +++ ++++ ?<' '--'\n       /++_++ ++ ++++++ ++?+ +++++*+++ ++++ \\\n       |_/ `\\++ ++ +++*++++++++++ ++++*./`\\_|\n            /+*.-.*+ +_ ++*+ _+++ .-.* +\\\n            | /   | +/ `\\?+/` \\*+|    \\ |\n             '    \\.'    |/    './     '" }
+  ];
+
+
   function generateDir(path) {
     if (dirCache[path]) return dirCache[path];
+
+    // Special: ~/pictures is the art gallery
+    if (path === '~/pictures' || path === '/pictures') {
+      var artFiles = asciiArt.map(function (a) {
+        return { name: a.name, ext: '.asc', content: a.content };
+      });
+      var entry = { dirs: [], files: artFiles };
+      dirCache[path] = entry;
+      return entry;
+    }
 
     var numDirs = 2 + Math.floor(Math.random() * 4);
     var numFiles = 3 + Math.floor(Math.random() * 5);
     var dirs = pick(dirNames, numDirs);
+
+    // Home directory always has a pictures/ dir
+    if (path === '~' || path === '/') {
+      if (dirs.indexOf('pictures') < 0) dirs.unshift('pictures');
+    }
+
     var files = [];
 
     // 1-3 .txt files with actual content
@@ -302,11 +342,15 @@
 
   var baseCmds = [
     'help', 'whoami', 'about', 'music', 'craft', 'archive', 'links',
-    'ls', 'ls /misc', 'cd', 'cat', 'less', 'grep', 'find', 'pwd', 'echo',
+    'ls', 'ls /misc', 'cd', 'cat', 'less', 'open', 'grep', 'find', 'pwd', 'echo',
     'man', 'sudo', 'chmod', 'touch', 'mkdir', 'rm',
     'mv', 'cp', 'sed', 'awk', 'curl', 'ping', 'ssh', 'top', 'ps',
     'kill', 'df', 'du', 'head', 'tail', 'wc', 'date', 'uptime',
-    'uname', 'reset', 'wumpus',
+    'uname', 'reset', 'wumpus', 'history', 'exit', 'logout',
+    'vim', 'vi', 'emacs', 'nano', 'git', 'python', 'python3', 'node',
+    'which', 'hostname', 'tree', 'docker', 'kubectl', 'brew', 'apt',
+    'npm', 'pip', 'fortune', 'cowsay', 'who', 'passwd', 'env',
+    'printenv', 'tmux', 'screen', 'make', 'cal', 'sl', 'yes',
     'gol', 'gol pause', 'gol resume', 'gol reset',
     'gol glider', 'gol speed', 'clear', 'theme'
   ];
@@ -315,7 +359,7 @@
     var lower = val.toLowerCase();
     // If the command has a space and starts with cd/cat/less, complete filenames
     var parts = lower.split(/\s+/);
-    if (parts.length >= 2 && ['cd', 'cat', 'less', 'grep'].indexOf(parts[0]) >= 0) {
+    if (parts.length >= 2 && ['cd', 'cat', 'less', 'open', 'grep'].indexOf(parts[0]) >= 0) {
       var partial = parts.slice(1).join(' ');
       var names = allNamesInCwd();
       // For cd, only dirs
@@ -737,7 +781,9 @@
     });
     if (found && found.content) {
       blank();
-      found.content.split('\n').forEach(function (l) { line('  ' + l, 'line-info'); });
+      var artMode = found.ext === '.asc';
+      var cls = artMode ? 'line-cyan' : 'line-info';
+      found.content.split('\n').forEach(function (l) { line('  ' + l, cls); });
       return;
     }
     if (found) {
@@ -938,7 +984,7 @@
   commands.uname = function () { blank(); line('  ShawnrOS 51.0-neon-terminal ACAB.1213', 'line-cyan'); line('  built with hugo, vanilla js, stubbornness', 'line-muted'); };
   commands.ping = function () { blank(); line('  PING shawnrider.com: 64 bytes \u2014 time=0.001ms', 'line-green'); line('  PING shawnrider.com: 64 bytes \u2014 time=0.001ms', 'line-green'); line('  (it\u2019s always up. it\u2019s a static site.)', 'line-muted'); };
   commands.ssh = function () { blank(); line('  ssh: you\u2019re already here.', 'line-cyan'); line('  there is nowhere deeper to go.', 'line-muted'); line('  ...or is there?', 'line-muted'); };
-  commands.curl = function () { blank(); line('  < HTTP/1.1 200 OK', 'line-green'); line('  < Content-Type: text/vibes', 'line-info'); line('  < X-Powered-By: caffeine, spite', 'line-info'); line('  < X-Frame-Of-Mind: questionable', 'line-muted'); line('  < Server: a laptop in seattle', 'line-muted'); };
+  commands.curl = function () { blank(); line('  < HTTP/1.1 200 OK', 'line-green'); line('  < Content-Type: text/vibes', 'line-info'); line('  < X-Powered-By: caffeine, spite', 'line-info'); line('  < X-Frame-Of-Mind: questionable', 'line-muted'); line('  < Server: a studio in seattle', 'line-muted'); };
   commands.awk = function () { blank(); line('  awk: it\u2019s always awk-ward in here.', 'line-orange'); line('  (you expected a real awk? on a personal website?)', 'line-muted'); };
   commands['import this'] = function () {
     blank();
@@ -977,6 +1023,364 @@
   commands['rm -rf /.'] = function () { handleRmRf(); };
 
   // =========================================================================
+  // More commands — editors, tools, fun
+  // =========================================================================
+
+  commands.history = function () {
+    blank();
+    if (cmdHistory.length === 0) { line('  (no history yet)', 'line-muted'); return; }
+    cmdHistory.forEach(function (c, i) {
+      htm('  <span style="color:var(--muted)">' + (i + 1).toString().padStart(4) + '</span>  ' + esc(c));
+    });
+  };
+
+  commands.exit = function () {
+    blank();
+    var msgs = [
+      'you can\u2019t leave. you live here now.',
+      'logout: not an option. there is no outside.',
+      'exit: where would you even go?',
+      'the terminal is your home now. it\u2019s cozy.',
+      'you close the terminal. another terminal opens. it\u2019s terminals all the way down.',
+      'connection to reality closed. reconnecting... reconnected.',
+    ];
+    line('  ' + msgs[Math.floor(Math.random() * msgs.length)], 'line-orange');
+  };
+  commands.logout = commands.exit;
+  commands.quit = commands.exit;
+
+  commands.vim = function () {
+    blank();
+    line('  opening vim...', 'line-green');
+    blank();
+    line('  ~', 'line-muted');
+    line('  ~', 'line-muted');
+    line('  ~', 'line-muted');
+    line('  ~                    VIM - Vi IMproved', 'line-cyan');
+    line('  ~', 'line-muted');
+    line('  ~                    by Bram Moolenaar', 'line-muted');
+    line('  ~', 'line-muted');
+    line('  ~', 'line-muted');
+    blank();
+    line('  just kidding. this isn\u2019t a real terminal.', 'line-muted');
+    line('  but respect. vim is the way.', 'line-green');
+    line('  (tabs > spaces. fight me.)', 'line-gold');
+  };
+  commands.vi = commands.vim;
+
+  commands.emacs = function () {
+    blank();
+    line('  emacs: loading...', 'line-purple');
+    line('  emacs: still loading...', 'line-purple');
+    line('  emacs: allocating 2GB for the scratch buffer...', 'line-purple');
+    blank();
+    line('  look, I used emacs for years. good years.', 'line-muted');
+    line('  but then I found vim and never looked back.', 'line-muted');
+    line('  (the emacs pinky is real. it haunts me still.)', 'line-muted');
+    blank();
+    line('  M-x butterfly', 'line-cyan');
+  };
+
+  commands.nano = function () {
+    blank();
+    line('  nano is fine.', 'line-info');
+    line('  nano is perfectly fine.', 'line-info');
+    line('  no one needs to feel bad about using nano.', 'line-muted');
+    line('  (but they do.)', 'line-muted');
+  };
+
+  commands.git = function () {
+    blank();
+    line('  GIT', 'line-heading');
+    blank();
+    var msgs = [
+      '  git status: everything is fine\n  git log: no it isn\u2019t',
+      '  branches: 47\n  branches with meaningful names: 3\n  branches anyone remembers: 1\n  it\u2019s main. it\u2019s always main.',
+      '  git blame: it was you. it\u2019s always you.\n  there is only one contributor.\n  you know what you did.',
+      '  git stash list:\n  stash@{0}: i\u2019ll come back to this\n  stash@{1}: i\u2019ll definitely come back to this\n  stash@{2}: (2019)',
+      '  the commit graph looks like a plate of spaghetti.\n  the spaghetti is load-bearing.\n  do not touch the spaghetti.',
+    ];
+    msgs[Math.floor(Math.random() * msgs.length)].split('\n').forEach(function (l) { line(l, 'line-info'); });
+  };
+
+  commands.python = function () {
+    blank();
+    line('  Python 3.\u221e (default, heat death of universe)', 'line-gold');
+    line('  >>> import shawnrider', 'line-green');
+    line('  >>> shawnrider.is_available()', 'line-green');
+    line('  True', 'line-cyan');
+    line('  >>> shawnrider.sleep()', 'line-green');
+    line('  PermissionError: not enough hours', 'line-orange');
+    blank();
+    line('  (this is not a real python repl. but you knew that.)', 'line-muted');
+  };
+  commands.python3 = commands.python;
+
+  commands.node = function () {
+    blank();
+    line('  Welcome to Node.js v\u221e', 'line-green');
+    line('  > require("meaning")', 'line-info');
+    line('  Error: Cannot find module \u2019meaning\u2019', 'line-orange');
+    line('  > require("left-pad")', 'line-info');
+    line('  \u2019    never forget\u2019', 'line-cyan');
+    blank();
+    line('  (type a real command. this is a website.)', 'line-muted');
+  };
+
+  commands.which = function () {
+    blank();
+    line('  /usr/local/bin/shawnr', 'line-cyan');
+    line('  (always has been)', 'line-muted');
+  };
+  commands.type = commands.which;
+
+  commands.hostname = function () {
+    blank();
+    line('  shawnrider.com', 'line-cyan');
+    line('  also known as: The Anything Goes School of Liberal Arts', 'line-muted');
+  };
+
+  commands.tree = function () {
+    blank();
+    var dir = getCurrentDir();
+    line('  .', 'line-bright');
+    dir.dirs.forEach(function (d, i) {
+      var last = (i === dir.dirs.length - 1 && dir.files.length === 0);
+      htm('  <span style="color:var(--dim)">' + (last ? '\u2514' : '\u251c') + '\u2500\u2500</span> <span style="color:var(--blue)">' + esc(d) + '/</span>');
+    });
+    dir.files.forEach(function (f, i) {
+      var last = (i === dir.files.length - 1);
+      var color = f.ext === '.txt' ? '--green' : '--orange';
+      if (f.name.startsWith('.')) color = '--muted';
+      htm('  <span style="color:var(--dim)">' + (last ? '\u2514' : '\u251c') + '\u2500\u2500</span> <span style="color:var(' + color + ')">' + esc(f.name) + '</span>');
+    });
+    blank();
+    line('  ' + dir.dirs.length + ' directories, ' + dir.files.length + ' files', 'line-muted');
+  };
+
+  commands.sl = function () {
+    blank();
+    line('       ====        ________                ___________', 'line-gold');
+    line('   _D _|  |_______/        \\__I_I_____===__|_________|', 'line-gold');
+    line('    |(_)---  |   H\\________/ |   |        =|___ ___|', 'line-gold');
+    line('    /     |  |   H  |  |     |   |         ||_| |_||', 'line-gold');
+    line('   |      |  |   H  |__--------------------| [___] |', 'line-gold');
+    line('   | ________|___H__/__|_____/[][]~\\_______|       |', 'line-gold');
+    line('   |/ |   |-----------I_____I [][] []  D   |=======|__', 'line-gold');
+    blank();
+    line('  you meant ls. you always mean ls.', 'line-muted');
+  };
+
+  commands.docker = function () {
+    blank();
+    line('  Cannot connect to the Docker daemon.', 'line-orange');
+    line('  Is the docker daemon running?', 'line-orange');
+    blank();
+    line('  (it is never running. you always have to start it.)', 'line-muted');
+    line('  (then wait. then restart it. then wait again.)', 'line-muted');
+  };
+
+  commands.kubectl = function () {
+    blank();
+    line('  error: the connection to the server was refused', 'line-orange');
+    blank();
+    line('  (the cluster is fine. probably. don\u2019t check.)', 'line-muted');
+    line('  (if you check, you have to fix it.)', 'line-muted');
+    var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    line('  (it\u2019s ' + days[new Date().getDay()] + '.)', 'line-muted');
+  };
+
+  var brewInterval = null;
+  commands.brew = function () {
+    blank();
+    var brewLine = document.createElement('div');
+    brewLine.className = 'line line-green';
+    brewLine.textContent = '  Updating Homebrew... ';
+    output.appendChild(brewLine);
+    scroll();
+    var spinChars = ['|', '/', '-', '\\'];
+    var spinIdx = 0;
+    var beerCount = 0;
+    brewInterval = setInterval(function () {
+      spinIdx = (spinIdx + 1) % spinChars.length;
+      var beers = '\ud83c\udf7a'.repeat(beerCount);
+      brewLine.textContent = '  Updating Homebrew... ' + spinChars[spinIdx] + ' ' + beers;
+      scroll();
+      if (Math.random() < 0.08) beerCount++;
+    }, 120);
+  };
+
+  function stopBrew() {
+    if (!brewInterval) return false;
+    clearInterval(brewInterval);
+    brewInterval = null;
+    blank();
+    var msgs = [
+      'Error: update failed. something something SHA256 mismatch.',
+      'Error: Cask \'sanity\' is unavailable.',
+      'Error: homebrew-core is a shallow clone. run brew update --force.',
+      'Error: permission denied @ /usr/local/Cellar/everything.',
+      'Error: your Xcode CLI tools are outdated. they are always outdated.',
+    ];
+    line('  ^C', 'line-orange');
+    line('  ' + msgs[Math.floor(Math.random() * msgs.length)], 'line-orange');
+    blank();
+    scroll();
+    return true;
+  }
+
+  commands.apt = function () {
+    blank();
+    line('  E: Could not open lock file \u2014 are you root?', 'line-orange');
+    line('  E: unable to acquire the dpkg frontend lock.', 'line-orange');
+    line('  E: this is a website, not a debian box.', 'line-muted');
+    line('  E: but we appreciate the effort.', 'line-muted');
+  };
+
+  commands.npm = function () {
+    blank();
+    line('  npm WARN deprecated everything@*: this package is deprecated', 'line-orange');
+    line('  added 1,247 packages in 45s', 'line-info');
+    line('  47 vulnerabilities (12 moderate, 35 high)', 'line-orange');
+    blank();
+    line('  (the JavaScript ecosystem is a series of miracles', 'line-muted');
+    line('   held together by package-lock.json and prayer)', 'line-muted');
+  };
+
+  commands.pip = function () {
+    blank();
+    line('  WARNING: pip is configured with locations that require TLS/SSL,', 'line-orange');
+    line('  however the ssl module in Python is not available.', 'line-orange');
+    blank();
+    line('  (every pip install is an adventure.', 'line-muted');
+    line('   usually the kind where you reinstall python.)', 'line-muted');
+  };
+
+  commands.fortune = function () {
+    var fortunes = [
+      'You will debug a race condition in the moonlight.',
+      'A git merge conflict is in your near future. It will be educational.',
+      'The CSS you write today will haunt you tomorrow.',
+      'Your next deployment will go smoothly. (just kidding.)',
+      'Someone will ask you to "just make it pop" this week.',
+      'The bug is not in your code. The bug is in your assumptions.',
+      'You will discover a TODO comment from 2019 that is still relevant.',
+      'A mass of tangled YAML awaits. Indentation matters.',
+      'Trust the process. The process is typing "help" in a terminal on someone\u2019s website.',
+      'Your side project will remain a side project. And that\u2019s beautiful.',
+      'Today is a good day to refactor. Tomorrow you will regret it.',
+      'The answer is 42. The question is wrong.',
+      'Lee "Scratch" Perry is watching over your dub delays.',
+      'Somewhere, a kubernetes pod restarts in your honor.',
+    ];
+    blank();
+    line('  ' + fortunes[Math.floor(Math.random() * fortunes.length)], 'line-cyan');
+  };
+
+  commands.cowsay = function () {
+    blank();
+    var msgs = [
+      'moo.',
+      'have you tried turning it off and on again?',
+      'tabs > spaces',
+      'the wumpus is in room 13.',
+      'ship it.',
+    ];
+    var msg = msgs[Math.floor(Math.random() * msgs.length)];
+    line('   ' + '_'.repeat(msg.length + 2), 'line-bright');
+    line('  < ' + msg + ' >', 'line-bright');
+    line('   ' + '-'.repeat(msg.length + 2), 'line-bright');
+    line('          \\   ^__^', 'line-gold');
+    line('           \\  (oo)\\_______', 'line-gold');
+    line('              (__)\\       )\\/\\', 'line-gold');
+    line('                  ||----w |', 'line-gold');
+    line('                  ||     ||', 'line-gold');
+  };
+
+  commands.yes = function () {
+    blank();
+    for (var i = 0; i < 20; i++) line('  y', 'line-green');
+    line('  ^C', 'line-orange');
+    blank();
+    line('  (you\u2019re welcome. the real yes never stops.)', 'line-muted');
+  };
+
+  commands.who = function () {
+    blank();
+    line('  shawnr   terminal  Mar  1 00:00 (shawnrider.com)', 'line-info');
+    line('  visitor  terminal  ' + new Date().toLocaleString('en-US', {month:'short', day:'numeric', hour:'2-digit', minute:'2-digit'}) + ' (you)', 'line-info');
+  };
+  commands.w = commands.who;
+
+  commands.passwd = function () {
+    blank();
+    line('  Changing password for shawnr.', 'line-info');
+    line('  Current password: ********', 'line-info');
+    line('  New password: ********', 'line-info');
+    line('  Retype new password: ********', 'line-info');
+    line('  passwd: password unchanged', 'line-orange');
+    blank();
+    line('  (you can\u2019t change what was never set.)', 'line-muted');
+  };
+
+  commands.env = function () {
+    blank();
+    htm('  <span style="color:var(--green)">USER</span>=shawnr');
+    htm('  <span style="color:var(--green)">HOME</span>=/home/shawnr');
+    htm('  <span style="color:var(--green)">SHELL</span>=/bin/zsh');
+    htm('  <span style="color:var(--green)">EDITOR</span>=vim');
+    htm('  <span style="color:var(--green)">LANG</span>=en_US.UTF-8');
+    htm('  <span style="color:var(--green)">TERM</span>=xterm-256color-but-actually-a-website');
+    htm('  <span style="color:var(--green)">COFFEE</span>=critical');
+    htm('  <span style="color:var(--green)">TABS_VS_SPACES</span>=tabs');
+    htm('  <span style="color:var(--green)">VIBE</span>=neon');
+    htm('  <span style="color:var(--green)">GOL_STATUS</span>=running');
+    htm('  <span style="color:var(--green)">WUMPUS_STATUS</span>=sleeping');
+    htm('  <span style="color:var(--green)">YEARS_ON_WEB</span>=' + (new Date().getFullYear() - 1996));
+  };
+  commands.printenv = commands.env;
+
+  commands.tmux = function () {
+    blank();
+    line('  you are already in a terminal inside a browser.', 'line-muted');
+    line('  a terminal inside a terminal inside a browser is getting carried away.', 'line-muted');
+  };
+  commands.screen = commands.tmux;
+
+  commands.make = function () {
+    blank();
+    line('  make: *** No targets specified and no makefile found.', 'line-orange');
+    blank();
+    line('  (the only thing to make here is memories.)', 'line-muted');
+    line('  (and maybe a PR. github.com/shawnr)', 'line-muted');
+  };
+
+  commands.cal = function () {
+    blank();
+    var d = new Date();
+    var monthStr = d.toLocaleString('en-US', { month: 'long', year: 'numeric' });
+    var pad = Math.floor((20 - monthStr.length) / 2);
+    line('  ' + ' '.repeat(Math.max(0, pad)) + monthStr, 'line-cyan');
+    line('  Su Mo Tu We Th Fr Sa', 'line-muted');
+    var first = new Date(d.getFullYear(), d.getMonth(), 1).getDay();
+    var lastDay = new Date(d.getFullYear(), d.getMonth() + 1, 0).getDate();
+    var row = '  ' + '   '.repeat(first);
+    for (var day = 1; day <= lastDay; day++) {
+      var ds = (day < 10 ? ' ' : '') + day;
+      row += ds + ' ';
+      if ((first + day) % 7 === 0 || day === lastDay) {
+        if (day >= d.getDate() && day - 6 <= d.getDate()) {
+          var re = new RegExp('\\b(' + d.getDate() + ')\\b');
+          htm(row.replace(re, '<span style="color:var(--gold);font-weight:bold">$1</span>'));
+        } else {
+          line(row, 'line-info');
+        }
+        row = '  ';
+      }
+    }
+  };
+
+  // =========================================================================
   // Command runner
   // =========================================================================
 
@@ -1011,6 +1415,8 @@
       handleCatLess(cmd.slice(4));
     } else if (cmd === 'less' || cmd.indexOf('less ') === 0) {
       handleCatLess((cmd.slice(4)).trim());
+    } else if (cmd.indexOf('open ') === 0) {
+      handleCatLess(cmd.slice(5));
     } else if (cmd.indexOf('grep ') === 0) {
       handleGrep(cmd.slice(5));
     } else if (cmd.indexOf('echo ') === 0) {
@@ -1064,6 +1470,14 @@
         if (historyIdx < cmdHistory.length - 1) { historyIdx++; input.value = cmdHistory[historyIdx]; }
         else { historyIdx = cmdHistory.length; input.value = ''; }
       }
+    } else if (e.key === 'c' && e.ctrlKey) {
+      e.preventDefault();
+      if (stopBrew()) return;
+      // Print ^C and abandon current input
+      htm('<span class="prompt">' + prompt() + '</span> ' + esc(input.value) + '^C', 'line-cmd');
+      input.value = '';
+      blank();
+      scroll();
     } else if (e.key === 'l' && e.ctrlKey) {
       e.preventDefault();
       commands.clear();
